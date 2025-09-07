@@ -1,0 +1,55 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.db
+*.sqlite
+*.log
+*.vsconfig
+
+packages/
+*.nupkg
+
+# Ignore database files
+*.db
+*.db-shm
+*.db-wal
+
+# Ignore migrations
+**/Migrations/**
+Migrations/
+
+# Ignore app settings files
+appsettings.json
+appsettings.Development.json
+.idea
+
+# Ignore IDE specific files
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore local configuration files
+*.local
+
+# Ignore any other files that are not needed in source control
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.config
