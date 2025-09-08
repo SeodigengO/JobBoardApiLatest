@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 public class ApplicantsController : ControllerBase
 {
-  // private readonly JobBoardDbContext dbContext;
+  
   private readonly ApplicantService applicantService;
 
   public ApplicantsController(ApplicantService applicantService)
   {
-    // this.dbContext = dbContext;
+    
     this.applicantService = applicantService;
   }
 

@@ -19,18 +19,14 @@ public class JobBoardDbContext: DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-    // ========================
-    // Company → Job (One-to-Many)
-    // ========================
+   
     modelBuilder.Entity<Company>()
         .HasMany(c => c.Jobs)
         .WithOne(j => j.Company)
         .HasForeignKey(j => j.CompanyId)
         .OnDelete(DeleteBehavior.Cascade);
 
-    // ========================
-    // Job → Application → Applicant (Many-to-Many via Application)
-    // ========================
+   
     modelBuilder.Entity<Application>()
         .HasKey(a => a.ApplicationId);
 
@@ -46,9 +42,7 @@ public class JobBoardDbContext: DbContext
         .HasForeignKey(a => a.ApplicantId)
         .OnDelete(DeleteBehavior.Cascade);
 
-    // ========================
-    // Applicant → Education (One-to-Many)
-    // ========================
+
     modelBuilder.Entity<Education>()
         .HasKey(e => e.EducationId);
 
@@ -58,9 +52,7 @@ public class JobBoardDbContext: DbContext
         .HasForeignKey(e => e.ApplicantId)
         .OnDelete(DeleteBehavior.Cascade);
 
-    // ========================
-    // Applicant → WorkExperience (One-to-Many)
-    // ========================
+  
     modelBuilder.Entity<WorkExperience>()
         .HasKey(w => w.WorkExperienceId);
 

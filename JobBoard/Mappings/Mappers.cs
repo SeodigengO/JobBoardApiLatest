@@ -8,26 +8,26 @@ namespace JobBoard.Mappings
     {
         public MappingProfile()
         {
-            // Applicant -> DTOs
+          
             CreateMap<Job, JobDtoResponse>()
             .ForMember(dest => dest.CompanyResponseDto, opt => opt.MapFrom(src => src.Company));
             ;
             CreateMap<Company, CompanyResponseDto>();
 
-            // Applicant mapping
+           
             CreateMap<PostApplicantDto, Applicant>()
                 .ForMember(dest => dest.ApplicantId, opt => opt.Ignore())
                 .ForMember(dest => dest.EducationHistory, opt => opt.MapFrom(src => src.EducationHistory))
                 .ForMember(dest => dest.WorkExperiences, opt => opt.MapFrom(src => src.WorkExperiences));
 
 
-            // Education mapping
+            
             CreateMap<PostEducationDto, Education>()
                 .ForMember(dest => dest.EducationId, opt => opt.Ignore())
                 .ForMember(dest => dest.ApplicantId, opt => opt.Ignore())
                 .ForMember(dest => dest.Applicant, opt => opt.Ignore());
 
-            // WorkExperience mapping
+        
             CreateMap<PostWorkExperienceDto, WorkExperience>()
                 .ForMember(dest => dest.WorkExperienceId, opt => opt.Ignore())
                 .ForMember(dest => dest.ApplicantId, opt => opt.Ignore())
